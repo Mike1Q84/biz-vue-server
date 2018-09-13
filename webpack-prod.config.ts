@@ -4,8 +4,8 @@ import webpackNodeExternals from 'webpack-node-externals';
 import commonConfig from './webpack.config';
 
 export const config: Configuration = merge(commonConfig, {
-	mode: 'development',
-	devtool: 'inline-source-map',
+	mode: 'production',
+	devtool: 'source-map',
 });
 
 export default config;

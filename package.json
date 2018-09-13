@@ -20,7 +20,7 @@
 		"watch:server": "nodemon ./dist/biz-vue-server.min.js --watch ./dist",
 		"test": "mocha --require ts-node/register --watch-extensions ts --watch \"test/**/*.test.ts\" -R spec",
 		"prebuild": "run-s clean",
-		"build": "NODE_ENV=production webpack --mode production --config webpack-build.config.ts"
+		"build": "NODE_ENV=production webpack --mode production --config webpack-prod.config.ts"
 	},
 	"dependencies": {
 		"express": "^4.16.3",
@@ -40,6 +40,7 @@
 		"@types/mocha": "^5.2.5",
 		"@types/node": "8.10.26",
 		"@types/webpack": "^4.4.11",
+		"@types/webpack-merge": "^4.1.3",
 		"@types/webpack-node-externals": "^1.6.3",
 		"awesome-typescript-loader": "^5.2.1",
 		"chai": "^4.1.2",
@@ -50,6 +51,7 @@
 		"typescript": "^3.0.3",
 		"webpack": "^4.18.0",
 		"webpack-cli": "^3.1.0",
+		"webpack-merge": "^4.1.4",
 		"webpack-node-externals": "^1.7.2",
 		"yarn-run-all": "^3.1.1"
 	},
