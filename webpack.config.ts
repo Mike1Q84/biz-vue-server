@@ -1,4 +1,5 @@
 import { Configuration } from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import webpackNodeExternals from 'webpack-node-externals';
 
 export const commonConfig: Configuration = {
@@ -9,8 +10,8 @@ export const commonConfig: Configuration = {
 		extensions: [ '.ts', '.js', '.json' ],
 	},
 	output: {
-		path: `${__dirname}/dist`,
-		filename: 'biz-vue-server.min.js',
+		path: __dirname,
+		filename: 'dist/biz-vue-server.min.js',
 	},
 	module: {
 		rules: [
@@ -21,6 +22,13 @@ export const commonConfig: Configuration = {
 			},
 		],
 	},
+	plugins: [
+		new BundleAnalyzerPlugin({
+			analyzerMode: 'static',
+			openAnalyzer: false,
+			reportFilename: 'build/size-report.html',
+		}),
+	],
 };
 
 export default commonConfig;

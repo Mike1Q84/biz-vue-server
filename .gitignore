@@ -62,6 +62,7 @@ typings/
 
 # build output
 dist/
+build/
 
 # yarn lock
 yarn.lock
