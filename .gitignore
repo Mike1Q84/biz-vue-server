@@ -66,3 +66,6 @@ build/
 
 # yarn lock
 yarn.lock
+
+# IDE
+.idea/
