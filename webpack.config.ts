@@ -1,3 +1,4 @@
+import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 import { Configuration } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import webpackNodeExternals from 'webpack-node-externals';
@@ -8,6 +9,9 @@ export const commonConfig: Configuration = {
 	externals: [webpackNodeExternals()],
 	resolve: {
 		extensions: [ '.ts', '.js', '.json' ],
+		plugins: [
+			new TsconfigPathsPlugin({ configFile: './tsconfig.json' }),
+		],
 	},
 	output: {
 		path: __dirname,

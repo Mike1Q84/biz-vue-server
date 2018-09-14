@@ -1,11 +1,15 @@
 {
 	"compilerOptions": {
 		"allowSyntheticDefaultImports": true,
+		"baseUrl": ".",
 		"emitDecoratorMetadata": true,
 		"esModuleInterop": true,
 		"experimentalDecorators": true,
 		"module": "commonjs",
 		"moduleResolution": "node",
+		"paths": {
+			"~*": ["*"]
+		},
 		"sourceMap": true,
 		"strict": true,
 		"target": "es6"
