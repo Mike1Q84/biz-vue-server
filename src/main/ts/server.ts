@@ -1,8 +1,9 @@
 import bodyParser from 'body-parser';
 import express, { Application, Router } from 'express';
 import { Inject, Service } from 'typedi';
-import { HealthRouter } from '~src/routes';
-import { Env } from '~src/server.types';
+
+import { HealthRouter } from '~routes';
+import { Env } from '~server.types';
 
 @Service()
 export class Server {

@@ -4,7 +4,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import webpackNodeExternals from 'webpack-node-externals';
 
 export const commonConfig: Configuration = {
-	entry: './src',
+	entry: './src/main/ts',
 	target: 'node',
 	externals: [webpackNodeExternals()],
 	resolve: {

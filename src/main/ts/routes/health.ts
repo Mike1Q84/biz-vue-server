@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { Service } from 'typedi';
-import { HealthController } from '~src/controllers'
+
+import { HealthController } from '~controllers'
 
 @Service()
 export class HealthRouter {

@@ -1,6 +1,7 @@
 import { ContainerInstance } from 'typedi';
-import { config } from '~src/config';
-import { Env } from '~src/server.types';
+
+import { config } from '~config';
+import { Env } from '~server.types';
 
 export class ServerDiModule {
 	constructor(private ci: ContainerInstance) {
