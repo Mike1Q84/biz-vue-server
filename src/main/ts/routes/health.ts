@@ -7,8 +7,8 @@ import { HealthController } from '~controllers'
 export class HealthRouter {
 	private static readonly _router: Router = Router({ strict: true });
 
-	constructor(healthController: HealthController) {
-		HealthRouter._router.get('/health', healthController.liveness.bind(healthController));
+	constructor(private healthController: HealthController) {
+		HealthRouter._router.get('/health', healthController.liveness);
 	}
 
 	get router(): Router {

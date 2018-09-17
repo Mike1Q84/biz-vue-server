@@ -25,4 +25,8 @@ export class Server {
 		console.log(`Server is running on port ${this.port}`);
 		Server.app.listen(this.port);
 	}
+
+	get app() {
+		return Server.app;
+	}
 }
