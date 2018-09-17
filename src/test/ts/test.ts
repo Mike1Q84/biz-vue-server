@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { Container, ContainerInstance } from 'typedi';
 
 import { ServerDiModule } from '~dimodule';
