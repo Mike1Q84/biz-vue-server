@@ -69,3 +69,6 @@ yarn.lock
 
 # IDE
 .idea/
+
+# MongoDB data
+data/
