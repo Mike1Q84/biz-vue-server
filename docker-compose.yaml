@@ -1,0 +1,20 @@
+version: '3'
+services:
+  mongodb:
+    container_name: "biz-mongo"
+    image: mongo:latest
+    ports:
+    - 27017:27017
+    volumes:
+    - ./data/db:/data/db
+    - ./config/mongo:/docker-entrypoint-initdb.d/
+    restart: always
+    environment:
+      MONGO_DATA_DIR: /data/db
+      MONGO_LOG_DIR: /dev/null
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_DATABASE: biz
+      MONGO_USERNAME: user
+      MONGO_PASSWORD: pass
+    command: mongod --smallfiles --logpath=/dev/null # --quiet
