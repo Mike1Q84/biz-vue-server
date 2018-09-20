@@ -18,7 +18,7 @@
 		"watch": "NODE_ENV=development run-p watch:build watch:server",
 		"watch:build": "webpack --mode development --config webpack-dev.config.ts --progress --colors --watch",
 		"watch:server": "nodemon ./dist/biz-vue-server.min.js --watch ./dist",
-		"test": "mocha -r ts-node/register -r tsconfig-paths/register --watch-extensions ts --watch \"src/test/**/*.test.ts\" -R spec",
+		"test": "mocha --opts mocha.opts",
 		"prebuild": "run-s clean",
 		"build": "NODE_ENV=production webpack --mode production --config webpack-prod.config.ts"
 	},
