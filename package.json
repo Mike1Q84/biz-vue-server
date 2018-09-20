@@ -27,6 +27,9 @@
 		"extension": [
 			".ts"
 		],
+		"include": [
+			"src/main/**/*.ts"
+		],
 		"exclude": [
 			"build",
 			"coverage",
@@ -34,6 +37,9 @@
 			"**/*.d.ts",
 			"**/test.ts",
 			"**/*.test.ts"
+		],
+		"require": [
+			"ts-node/register"
 		],
 		"reporter": [
 			"html",
