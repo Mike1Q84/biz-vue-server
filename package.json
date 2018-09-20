@@ -18,9 +18,28 @@
 		"watch": "NODE_ENV=development run-p watch:build watch:server",
 		"watch:build": "webpack --mode development --config webpack-dev.config.ts --progress --colors --watch",
 		"watch:server": "nodemon ./dist/biz-vue-server.min.js --watch ./dist",
-		"test": "mocha --opts mocha.opts",
+		"test": "nyc mocha --opts mocha.opts",
+		"coverage": "nodemon --ext ts --watch ./src/test --exec yarn test",
 		"prebuild": "run-s clean",
 		"build": "NODE_ENV=production webpack --mode production --config webpack-prod.config.ts"
+	},
+	"nyc": {
+		"extension": [
+			".ts"
+		],
+		"exclude": [
+			"build",
+			"coverage",
+			"webpack*.config.ts",
+			"**/*.d.ts",
+			"**/test.ts",
+			"**/*.test.ts"
+		],
+		"reporter": [
+			"html",
+			"text"
+		],
+		"all": true
 	},
 	"dependencies": {
 		"express": "^4.16.3",
@@ -48,6 +67,7 @@
 		"mocha": "^5.2.0",
 		"node-mocks-http": "^1.7.0",
 		"nodemon": "^1.18.4",
+		"nyc": "^13.0.1",
 		"supertest": "^3.3.0",
 		"ts-node": "^7.0.1",
 		"tsconfig-paths-webpack-plugin": "^3.2.0",
